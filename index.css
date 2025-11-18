@@ -1,0 +1,331 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+body {
+    background-color: #000000;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #F7D100;
+}
+
+header {
+    background-color: #000000;
+    box-shadow: 5px 2px 10px 1px rgba(247,209,0,.5);
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img{
+    width: auto;
+    height: 60px;
+}
+
+header .controls {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .controls label{
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+header .controls input {
+    width: 120px;
+    margin: 0 auto;
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: 2px solid #F7D100;
+    color: #000;
+    outline: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+main {
+    width: 100%;
+    height: calc(100vh - 80px);
+    min-height: 600px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .btns {
+    width: 200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .btns button {
+    margin: 15px 0;
+    background-color: #F7D100;
+    border: 1px solid #F7D100;
+    color: #000;
+    outline: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+main .btns button:disabled {
+    background-color: #c1c1c1;
+    border: 1px solid #c1c1c1;
+    cursor: not-allowed;
+}
+
+main .btns.btns-1 button {
+    padding: 5px 30px;
+    font-size: 24px;
+    border-radius: 25px;
+}
+
+main .btns.btns-2 button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 0;
+}
+
+main .btns.btns-2 #plus::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+main .btns.btns-2 #plus::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background-color: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+main .btns.btns-2 #sub::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+main .timer {
+    text-align: center;
+    width: calc(100% - 400px);
+}
+
+main .timer .clock h2{
+    color: #F7D100;
+    font-size: 60px;
+    margin: 0 0 30px;
+}
+
+main .timer .clock .legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .timer .clock span{
+    margin: 30px 0 0;
+    color: #F7D100;
+    font-size: 24px;
+    font-weight: 600;
+    width: 50%;
+}
+
+main .timer .clock h3{
+    color: #ffffff;
+    font-size: 280px;
+    line-height: 1;
+    margin: 0;
+}
+
+main .timer .time-out {
+    display: none;
+}
+
+main .timer .time-out h4{
+    color: #F7D100;
+    font-size: 100px;
+    line-height: 1;
+    margin: 0;
+}
+
+#reset,
+#resume,
+#string,
+#stop {
+    display: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+@media (max-width: 1400px) {
+    main .timer .clock h3{
+        font-size: 220px;
+    }
+    main .timer .clock h2{
+        font-size: 50px;
+    }
+    main .timer .time-out h4{
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 1200px) {
+    main .timer .clock h3{
+        font-size: 180px;
+    }
+    main .timer .time-out h4{
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 1100px) {
+    main .timer .clock h3{
+        font-size: 120px;
+    }
+    main .timer .clock h2{
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 986px) {
+    main {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main .btns {
+        width: 100%;
+        margin: 50px 0;
+        flex-direction: row;
+    }
+
+    main .timer {
+        width: 100%;
+    }
+
+    main .btns button {
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 746px) {
+
+    header {
+        height: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .logo{
+        margin-bottom: 30px;
+    }
+
+    header .logo img{
+        height: 60px;
+    }
+
+    header .controls{
+        margin: 0  auto;
+    }
+
+    header .controls label{
+        font-size: 18px;
+    }
+
+    header .controls input {
+        font-size: 18px;
+    }
+
+    main .btns.btns-1 button {
+        font-size: 18px;
+    }
+
+    main .btns.btns-2 button {
+        width: 40px;
+        height: 40px;
+    }
+
+    main .btns.btns-2 #plus::before {
+        width: 20px;
+    }
+
+    main .btns.btns-2 #plus::after {
+        height: 20px;
+    }
+
+    main .btns.btns-2 #sub::before {
+        width: 20px;
+    }
+
+    main .timer .clock h2{
+        font-size: 28px;
+    }
+
+    main .timer .clock span{
+        font-size: 20px;
+    }
+
+    main .timer .clock h3{
+        font-size: 80px;
+    }
+
+    main .timer .time-out h4{
+        font-size: 40px;
+    }
+
+}
